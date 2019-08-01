@@ -1,7 +1,7 @@
 # 标记字母
 
-本项目主要练习标签的语义化，项目参考于：[MDN Web Docs](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Marking_up_a_letter)
-[demo](https://15515179583.github.io/MDN/test1/index.html)
+本项目主要练习标签的语义化，项目参考于：[MDN Web Docs](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Marking_up_a_letter)<br>
+[demo](https://15515179583.github.io/MDN/test1/index.html)展示
 
 ## 任务介绍
 
