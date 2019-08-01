@@ -1,4 +1,4 @@
-# 标记字母
+# 构建内容丰富的网页
 
 本项目主要练习结构的语义化，项目参考于：[MDN Web Docs](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Structuring_a_page_of_content)<br>
 点击[此处](https://15515179583.github.io/MDN/test2/index.html)查看效果
