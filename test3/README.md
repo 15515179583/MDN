@@ -43,7 +43,7 @@
     - frameborder 边框
     - src 
     - sandbox
-- 矢量图形（SVG）
+- 矢量图形（SVG）<br>
   矢量图形在很多情况下非常有用 — 它们拥有较小的文件尺寸，却高度可缩放，所以它们不会在镜头拉近或者放大图像时像素化。<br>
   详情点击[此处](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web)
 - 响应式图片

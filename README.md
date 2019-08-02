@@ -9,3 +9,6 @@
 - 构建内容丰富的网页
   - [demo](https://15515179583.github.io/MDN/test2/index.html)
   - [代码](/test2)
+- Mozilla醒目页面
+  - [demo](https://15515179583.github.io/MDN/test3/index.html)
+  - [代码](/test3)
