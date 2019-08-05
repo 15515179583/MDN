@@ -4,7 +4,7 @@
 [效果展示](https://15515179583.github.io/MDN/test7/index.html)
 
 ## 任务介绍
-123<table style="display:inline-block"><tr><td bgcolor='orange'> 背景色是orange</td></tr></table>456
+123<table style="display:inline-block"><tr><td bgcolor="#333"> 背景色是orange</td></tr></table>456
 练习：设置字体、粗细、斜体、行还有字符间距、阴影以及文本的其他特征。
 - 字体
   - 首先，下载一些免费的字体。因为这是一所大学，字体应该严肃，正式，给人信任的感觉 —— 主体使用serif字体，对标题结合使用sans-serif 或者 slab serif会是不错的选择。
