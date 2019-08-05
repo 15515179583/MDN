@@ -92,7 +92,7 @@
   - list-style-image 自定义项目符号
     - background-image 图片文件的参考路径
     - background-position 定义所选元素背景中的图像将出现在哪里 
-    - background-size 设置背景图片的大小。 <span color="red"> *我们使用的尺寸为1.6rem（16px），它非常吻合我们为项目符号设置的 20px  的填充， 16px 加上 4px 的空格间距，可以使项目符号和列表项文本效果更好。* </span>
+    - background-size 设置背景图片的大小。 <span style="color:red"> 我们使用的尺寸为1.6rem（16px），它非常吻合我们为项目符号设置的 20px  的填充， 16px 加上 4px 的空格间距，可以使项目符号和列表项文本效果更好。 </span>
     - background-repeat 设置图片填充
 - 链接
   - link 没有访问过的
