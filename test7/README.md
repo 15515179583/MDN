@@ -45,7 +45,7 @@
   - 简写
     - 顺序：font-style, font-variant, font-weight, font-stretch, font-size, line-height, font-family.
     - 说明：font-size 和 line-height 属性之间必须放一个正斜杠
-    - 样例:  *font: italic normal bold normal 3em/1.5 Helvetica, Arial, sans-serif;*
+    - 样例：  *font: italic normal bold normal 3em/1.5 Helvetica, Arial, sans-serif;*
 - 文本
   - text-decoration 设置在文本中的线
     - none 取消已经存在的任何文本装饰
