@@ -23,3 +23,6 @@
 - 排版社区大学首页
   - [demo](https://15515179583.github.io/MDN/test7/index.html)
   - [代码](/test7)
+- 盒模型练习
+  - [demo](https://15515179583.github.io/MDN/test8/index.html)
+  - [代码](/test8)

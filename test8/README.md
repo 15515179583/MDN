@@ -1,0 +1,96 @@
+# css 盒模型练习
+
+项目参考至[MDN](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Styling_boxes/Creating_fancy_letterheaded_paper)<br>
+[效果展示](https://15515179583.github.io/MDN/test8/index.html)
+
+## 知识点
+- 盒模型
+  - 属性：
+    - width 和height 设置了内容框的宽/高
+    - padding 设置内边距
+    - border 设置边框
+    - margin 设置外边距
+    - overflow 溢出
+      - auto 如果内容太多，那么超出盒子大小的内容会被隐藏，滚动条显示出来，从而可以让用户滚动看到所有内容。
+      - hidden 如果内容太多，那么超出盒子大小的内容被隐藏了。
+      - visible(默认) 如果内容太多，超出盒子大小的内容显示在盒子之外
+    - background 背景
+      - background-clip 设置元素的背景（背景图片或颜色）是否延伸到边框下面。
+        - border-box 背景延伸至边框外沿
+        - padding-box 背景延伸至内边距（padding）外沿。不会绘制到边框处。
+        - content-box 背景被裁剪至内容区（content box）外沿。
+        - text(实验，尽量不用) 背景被裁剪成文字的前景色。
+    - outline 轮廓<br>
+      盒子的 outline 看起来像边框，但是它不是盒模型的一部分。它表现得像边框，但是是画在盒子之上，不会修改盒子的大小（具体来说，outline 是画在边框之外，外边距区域之内）。
+  - 高级属性
+    - 设置宽和高的约束
+      - min-width
+      - max-width
+      - max-width
+      - max-height
+  - 显示类型
+    - display
+      - block 块盒(盒子之前以及之后的内容出现在不同的行上)
+      - inline 它跟随文档的文本流堆放
+      - inline-block 行内块盒
+      - table 允许你像处理table布局那样处理非table元素
+      - flex 弹性盒子
+      - grid 网格
+- 背景
+  - background-color 为背景设置一个纯色。<br>
+    - transparent 透明
+  - background-image 指定在元素的背景中出现的背景图像。这可以是静态文件，也可以是生成的渐变。
+    - url 背景图片
+    - 渐变
+      - linear-gradient() 函数至少需要用逗号分隔的三个参数——背景中渐变的方向，开始的颜色和结尾的颜色。
+      - 
+  - background-position 指定背景应该出现在元素背景中的位置。<br>
+  通常，该属性将使用两个通过空格分隔的值，该空间指定了图像的水平(x)和垂直(y)坐标
+    - center
+    - left
+    - right
+    - top
+    - bottom
+  - background-repeat 指定背景是否应该被重复(平铺)
+    - no-repeat 图像将不会重复:它只会显示一次
+    - repeat-x 图像将在整个背景中水平地重复
+    - repeat-y 图像会在背景下垂直地重复。
+    - repeat 图像将在整个背景中水平和竖直地重复。
+  - background-attachment 当内容滚动时，指定元素背景的行为，例如，它是滚动的内容，还是固定的?
+    - scroll 使元素的背景在页面滚动时滚动
+    - fixed 会使元素的背景相对于视口固定
+    - local 将背景设置为它所设置的元素的背景，因此当您滚动元素时，背景会随之滚动。
+  - background-size 允许动态调整背景图像的大小。
+- 边框
+  - border-width 设置边界宽度
+  - border-style 设置边界样式
+    - none 和hidden 类似，不显示边框
+    - hidden 不显示边框
+    - dotted 显示为一系列圆点
+    - dashed 显示为一系列短的方形虚线
+    - solid 显示为一条实线
+    - double 显示为一条双实线，宽度是 border-width 
+    - groove 显示为有雕刻效果的边框
+    - ridge 显示为有浮雕效果的边框
+    - inset 显示为有陷入效果的边框
+    - outset 显示为有突出效果的边框
+  - border-color 设置边界颜色
+  - border-radius 设置边框圆角
+    - 椭圆形角 两个不同的半径用正斜杠（/）分隔
+  - border-image 边界图像
+    - border-image-source 指定要使用的源图像作为边界图像
+    - border-image-slice 设置所需大小
+    - border-image-repeat 指定我们希望图像如何填充边界
+      - stretch(默认) 侧面的图像被拉伸来填满边界
+      - repeat 边图像被重复，直到边界被填满
+      - round 边的图像被重复，直到边界被填满，它们都被稍微拉伸
+      - space 边图像被重复，直到边界被填满，每个拷贝之间添加了少量的间隔
+- 盒子阴影
+  - box-shadow
+    - 第一个长度值是水平偏移量
+    - 第二个长度值是垂直偏移量
+    - 第三个长度的值是模糊半径
+    - 第四个长度的值是扩散半径
+    - 颜色值是阴影的基本颜色
+    - inset(内部阴影)
+- 滤镜（filter）
