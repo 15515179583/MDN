@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>js小练习</title>
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="story.css">
 </head>
 <body>
   <div class="wrap">
@@ -19,12 +20,27 @@
     </nav>
     <main>
       <div class="input">
-          <label for="number">请输入你猜的数字：</label>
-          <input type="text" id="number">
-            <button class="submit" value="submit">确定</button>
-            <button class="submit reset" value="reset">重置</button>
-        </div>
+        <label for="number">请输入一个名字：</label>
+        <input type="text" id="number" placeholder="小明" value="小明">
+        <button class="submit" value="submit" onclick="clicked()">随机</button>
+      </div>
+      <div class="output">
+        <p class="content"></p>
+      </div>
     </main>
   </div>
+<script>
+  function clicked() {
+    let element = document.querySelector('.submit')
+    element.className = "submit"
+    setTimeout(() => {
+      element.className = "submit clicked";
+    },0)
+    let output = document.querySelector('.output')
+    output.style.display = 'block'
+    let content = document.querySelector('.content')
+    content.textContent = '一个笑话，然后就没了。哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈~'
+  }
+</script>
 </body>
 </html>

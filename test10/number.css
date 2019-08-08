@@ -65,6 +65,10 @@ tr td:nth-of-type(2){
 tbody tr {
   background-color:red; 
 }
-.ok {
-  background-color: aquamarine !important;
+tbody td {
+  color: rgb(245, 202, 202);
+}
+.ok td {
+  background-color: aquamarine;
+  color: rgb(48, 85, 85);
 }

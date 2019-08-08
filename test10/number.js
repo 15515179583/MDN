@@ -1,5 +1,4 @@
 const btn = document.querySelectorAll('.submit')
-console.log(btn)
 let randomNumber = getRandomInt(0,99)
 let count = 1
 let results = []
@@ -7,8 +6,6 @@ let results = []
 btn.forEach(element => {
   element.addEventListener('click', () => {
     click(element)
-    console.log(randomNumber)
-    console.log(element)
   })
 });
 
@@ -67,7 +64,7 @@ function judge() {
   } else if (count == 11) {
     alert('游戏失败！！！你在10次内未能找到答案')
   } else {
-    console.log('你的输入有误')
+    alert('请输入正确的数字')
   }
 }
 
@@ -95,6 +92,4 @@ function createRow(input) {
   tr.appendChild(td2)
   tr.appendChild(td3)
   tbody.appendChild(tr)
-  console.log(input.id)
-  console.log(td1)
 }
