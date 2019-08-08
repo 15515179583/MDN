@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js小练习</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="number.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>js小练习</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="number.html">猜数字小游戏</a></li>
+        <li><a href="story.html">随机故事</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p class="description">我刚才随机选定了一个100以内的自然数。看你能否在 10 次以内猜中它。每次我都会告诉你所猜的结果是高了还是低了。</p>
+      <div class="input">
+        <label for="number">请输入你猜的数字：</label>
+        <input type="text" id="number">
+          <button class="submit" value="submit">确定</button>
+          <button class="submit reset" value="reset">重置</button>
+      </div>
+      <div class="result">
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>结果</th>
+              <th>所猜数值</th>
+            </tr>
+          </thead>
+            <tbody class="results"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+  <script src="number.js" async></script>
+</body>
+</html>

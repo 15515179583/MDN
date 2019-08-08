@@ -29,3 +29,6 @@
 - CSS 布局
   - [demo](https://15515179583.github.io/MDN/test9/index.html)
   - [代码](/test9)
+- js 小练习
+  - [demo](https://15515179583.github.io/MDN/test10/index.html)
+  - [代码](/test10)

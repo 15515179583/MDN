@@ -1,0 +1,70 @@
+.input {
+  margin-top: 1.2em;
+  line-height: 2.1em;
+}
+.input input {
+  padding-left: 0.5em; 
+  width: 8em;
+}
+.submit {
+  width: 5em;
+  border: 2px solid rgb(99, 167, 194);
+  border-radius: 1em;
+  outline: none;
+  background-color: rgb(135, 166, 228);
+  color: #eee;
+  cursor: pointer;
+}
+.clicked {
+  animation: click 0.15s;
+}
+@keyframes click{
+  to {
+    transform: translate(1px ,2px);
+  }
+}
+table {
+  margin-top:1em; 
+  width: 100%;
+  border: 1px solid rgb(135, 166, 228);
+  border-collapse: collapse;
+}
+tr {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+th ,td{
+  text-align: center;
+  min-width: 120px;
+  flex: 2;
+}
+td {
+  border-top: 1px solid rgb(135, 166, 228);
+}
+thead {
+  padding: 0;
+}
+th:nth-of-type(2) {
+  flex: 3;
+  border-left: 1px solid rgb(135, 166, 228);
+  border-right: 1px solid rgb(135, 166, 228);
+}
+tr td:nth-of-type(2){
+  flex: 3;
+  border-left: 1px solid rgb(135, 166, 228);
+  border-right: 1px solid rgb(135, 166, 228);
+}
+@media(max-width:570px) {
+  th ,td{
+    text-align: center;
+    min-width: 80px;
+    flex: 2;
+  }
+}
+tbody tr {
+  background-color:red; 
+}
+.ok {
+  background-color: aquamarine !important;
+}
