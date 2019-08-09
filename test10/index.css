@@ -51,5 +51,118 @@ main {
 }
 main .info {
   text-align: center;
-  padding-top: 8em; 
+  padding-top: 0.5em;
+}
+.games {
+  margin-top: 1em; 
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(5, 1fr);
+  min-height: 10em; 
+}
+.game {
+  height: 11em;
+  overflow: hidden;
+  background-color: rgb(162, 187, 235);
+  border-radius: 1em;
+}
+.game:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 2px rgb(135, 166, 228),
+              2px 2px 1px rgb(142, 154, 177) inset;
+  animation: move 0.3s;
+  animation-fill-mode: forwards;
+}
+@keyframes move {
+  to {
+    transform: translatey(3px);
+  }
+}
+.game-state {
+  margin: 0.3em auto;
+  max-width: 5em;
+  min-height: 1.5em;
+  font-size: 0.9em;
+  text-align: center;
+  line-height: 1.5em;
+  border-radius: 1em;
+}
+.new {
+  background-color: rgb(109, 241, 197);
+  color: #fff;
+}
+.hot {
+  background-color: rgb(241, 92, 66);
+  color: #eee;
+}
+.event {
+  background-color: rgb(236, 240, 40);
+  color: rgb(235, 51, 121);
+}
+.game-photo {
+  display: block;
+  margin: 0.25em auto;
+  width: 5em;
+  height: 5em;
+  outline: none;
+  border: none;
+}
+.game-name {
+  margin: 0.2em auto; 
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  border-top: 1px solid rgb(177, 236, 230);
+  border-bottom: 1px solid rgb(177, 236, 230);
+  color: #eee
+}
+.game-info {
+  margin: 0 auto;
+  padding: 0 0.2em 0;
+  width: 100%;
+  height: 2.8em;
+  font-size: 0.75em;
+  line-height: 1.4em;
+  color: #ddd;
+}
+.game-info {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap:break-word;
+  word-break:break-all;
+}
+
+@media(max-width:460px) {
+  .games {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media(min-width:461px) and (max-width:520px) {
+  .games {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media(min-width:521px) and (max-width:700px) {
+  .games {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media(min-width:899px) {
+  .games {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media(min-width:900px) {
+  .games {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media(min-width:1100px) {
+  .games {
+    grid-template-columns: repeat(7, 1fr);
+  }
 }

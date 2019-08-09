@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js小练习</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="story.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>js小练习</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="number.html">猜数字小游戏</a></li>
+        <li><a href="story.html">随机故事</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="input">
+        <label for="number">请选择雷的个数：</label>
+        <input type="text" id="number" placeholder="小明" value="小明">
+        <button class="submit" value="submit" onclick="clicked()">随机</button>
+      </div>
+      <div class="output">
+        <p class="content"></p>
+      </div>
+    </main>
+  </div>
+<script>
+  function clicked() {
+    let element = document.querySelector('.submit')
+    element.className = "submit"
+    setTimeout(() => {
+      element.className = "submit clicked";
+    },0)
+    let output = document.querySelector('.output')
+    output.style.display = 'block'
+    let content = document.querySelector('.content')
+    content.textContent = '一个笑话，然后就没了。哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈~'
+  }
+</script>
+</body>
+</html>
