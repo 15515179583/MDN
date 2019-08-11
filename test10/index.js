@@ -16,40 +16,46 @@ let games = [
     state: 'new',
     photo: 'default.png',
     name: '猜数字小游戏',
-    info: '猜数字'
+    info: '猜数字',
+    href: 'number'
   },
   {
     id: 2,
     state: 'event',
     photo: '1.jpg',
     name: '扫雷',
-    info: 'boom~'
+    info: 'boom~',
+    href: 'story'
   },
   {
     id: 3,
     state: 'hot',
     photo: '2.jpg',
     name: '坦克大战',
-    info: 'boom~'
+    info: 'boom~',
+    href: 'story'
   },
   {
     id: 4,
     state: 'hot',
     photo: 'default.png',
     name: '你猜',
-    info: '好多好多好多好多好多好多好多好多好多好多好多好多好多好多'
+    info: '好多好多好多好多好多好多好多好多好多好多好多好多好多好多',
+    href: 'number'
   },
   {
     id: 5,
     state: 'event',
     name: '你猜',
-    info: '好多好多好多好多好多好多好多好多好多好多好多好多好多好多'
+    info: '好多好多好多好多好多好多好多好多好多好多好多好多好多好多',
+    href: 'number'
   },
   {
     id: 6,
     state: 'new',
     name: '测试',
-    info: '测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试'
+    info: '测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试',
+    href: 'story'
   },
 ]
 let game = {
@@ -57,7 +63,8 @@ let game = {
   state: String,
   photo: String,
   name: String,
-  info: String
+  info: String,
+  href: String
 }
 
 function creatGame() {
@@ -77,6 +84,18 @@ function creatGame() {
     }
     div = document.createElement('div')
     div.className = 'game'
+    div.href = element.href
+    console.log(element.href)
+    console.log(element.id)
+    div.onclick = (element) => {
+      let href = ''
+      if (element.target.parentElement.href) {
+        href = element.target.parentElement.href
+      } else {
+        href = element.target.href
+      }
+      window.location.href = ('http://127.0.0.1:5500/test10/games/' + href + '/game.html')
+    }
     state = document.createElement('p')
     state.className = 'game-state ' + element.state + ' '
     state.textContent = states[element.state]
@@ -94,5 +113,5 @@ function creatGame() {
     div.appendChild(title)
     div.appendChild(info)
     Games.appendChild(div)
-  });
+  })
 })()
