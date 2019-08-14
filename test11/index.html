@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main>
+    <div class="box1" title='最外层'>
+      <div class="box2" title='外层' >
+        <div class="box3" title="内层">
+          <button class="start" title="按钮">开始测试</button>
+        </div>
+      </div>
+    </div>
+    <span class="state">当前阶段为：冒泡阶段</span>
+    <span class="stoped">未阻止</span>
+    <ul class="buttons">
+      <li><button class="bubble">事件冒泡</button></li>
+      <li><button class="stop">阻止</button></li>
+      <li><button class="noBubble">事件捕获</button></li>
+      <li><button class="reset">清空</button></li>
+    </ul>
+  </main>
+  <aside>
+    <h2>输出</h2>
+    <ul class="output"></ul>
+  </aside>
+  <script src="index.js"></script>
+</body>
+</html>

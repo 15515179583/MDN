@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+main {
+  margin: 0 auto;
+  width: 300px;
+  height: 370px;
+  border: 1px solid skyblue;
+}
+.buttons {
+  padding-top: 10px; 
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+.box1 {
+  width: 300px;
+  height: 300px;
+  background-color: #f00;
+}
+.box2 {
+  width: 150px;
+  height: 150px;
+  background-color: #0f0;
+}
+.box3 {
+  width: 75px;
+  height: 75px;
+  background-color: #00f;
+}
+.start {
+  display: block;
+  outline: none;
+  height: 25px;
+  line-height:25px; 
+  color: #fff;
+  background-color: rgb(245, 190, 79);
+  border: 1px solid salmon;
+  border-radius: 10px; 
+}
+li button {
+  display: block;
+  width: 70px;
+  outline: none;
+  color: #fff;
+  background-color: rgb(57, 208, 235);
+  border-radius: 10px; 
+}
+li button:hover {
+  cursor: pointer;
+  color: rgb(57, 208, 235);
+  background-color: rgb(244, 247, 246);
+}
+span {
+  display: inline-block;
+  padding:5px 0 0 13px;
+}
+aside {
+  margin: 0 auto;
+  width: 300px;
+  height: 180px;
+  background-color:#eee; 
+  color: rgb(90, 209, 228);
+  overflow: hidden;
+  border: 1px solid skyblue;
+  border-top: none; 
+}
+h2 {
+  padding-top:5px; 
+  padding-bottom:10px; 
+  text-align: center;
+  border-bottom: 1px solid rgb(83, 212, 235); 
+}
+aside ul {
+  color: rgb(110, 163, 223);
+  padding-top: 10px;
+  padding-left: 10px;
+}
+aside li {
+  line-height: 20px;
+}
