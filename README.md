@@ -37,3 +37,5 @@
   - [代码](/test11)
 - call,apply,bind用法及其说明
   - [代码](/test12)
+- String
+  - [代码](/test13)
