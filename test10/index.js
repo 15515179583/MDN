@@ -94,7 +94,7 @@ function creatGame() {
       } else {
         href = element.target.href
       }
-      window.location.href = ('http://127.0.0.1:5500/test10/games/' + href + '/game.html')
+      window.location.href = ('https://github.com/15515179583/MDN/blob/master/test10/games/' + href + '/game.html')
     }
     state = document.createElement('p')
     state.className = 'game-state ' + element.state + ' '
