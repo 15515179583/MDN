@@ -4,12 +4,13 @@ let btn = document.querySelectorAll('.submit')
 let divArr = new Array()
 let grids = new Array()
 let arr = new Array()
+let divs = new Array()
 
 let lines = 0
 let columns = 0
 let sweeps = 0
 let gridss = 0
-
+let count = 0 //记录点击数
 btn.forEach(element => {
   element.addEventListener('click', () => {
     click(element)
@@ -38,8 +39,10 @@ function start() {
   createGrids(gridss,sweeps)
   shuffle()
   sliceArray(Math.sqrt(gridss))
+  getDivs()
   addClickEvent()
 }
+
 function reset() {
   main.parentNode.removeChild(main);
   let mainTag = document.querySelector('main')
@@ -163,9 +166,11 @@ function addColor(element,color = element.style.color ,backgroundColor = element
   element.style.backgroundColor = backgroundColor
   element.style.color = color
 }
-let divs = Array.from(document.querySelectorAll('.grid'))
-for (let i = 0; i < lines; i++) {
-  divArr.push(divs.slice(i*lines,i*lines+lines))
+function getDivs() {
+  divs = Array.from(document.querySelectorAll('.grid'))
+  for (let i = 0; i < lines; i++) {
+    divArr.push(divs.slice(i*lines,i*lines+lines))
+  }
 }
 function gameOver() {
   console.log(divs)
@@ -176,20 +181,25 @@ function gameOver() {
     }
   });
 }
+function changeState(element) {
+  arr[element.dirx][element.diry].state = true;
+  count++
+}
 function addClickEvent() {
   main.addEventListener('click', (e) => {
     switch(e.target.value) {
-      case 0: console.log(e.target.dirx + ' ' + e.target.diry); scanGrid(e.target); break
-      case 1: console.log(e.target.dirx + ' ' + e.target.diry); addColor(e.target, 'rgb(80, 228, 159)', '#aaa'); break
-      case 2: addColor(e.target, 'rgb(230, 199, 112)', '#aaa'); break
-      case 3: addColor(e.target, 'rgb(239, 243, 30)', '#aaa'); break
+      case 0: scanGrid(e.target); break
+      case 1: changeState(e.target); addColor(e.target, 'rgb(80, 228, 159)', '#aaa'); break
+      case 2: changeState(e.target); addColor(e.target, 'rgb(230, 199, 112)', '#aaa'); break
+      case 3: changeState(e.target); addColor(e.target, 'rgb(239, 243, 30)', '#aaa'); break
       case 4: 
       case 5: 
       case 6: 
       case 7: 
-      case 8: addColor(e.target, 'rgb(255, 115, 48)', '#aaa'); break
+      case 8: changeState(e.target); addColor(e.target, 'rgb(255, 115, 48)', '#aaa'); break
       case 9: addColor(e.target, 'rgb(240, 78, 49)' , '#fbb', '😡'); gameOver(); break
     }
+    console.log(count)
   })
   main.addEventListener('contextmenu', (e) =>{
     console.log('右击')
@@ -210,7 +220,6 @@ function scanGrid(base) {
   while (scanArr.length != 0){
     let element = scanArr.pop()
     arr[element.x][element.y].state = true
-    console.log(element.x + ' ' + element.x)
     divArr[element.x][element.y].style.backgroundColor = '#ccc'
     for(let k = 0; k < 8; k++) {
       if(element.x + dir[k][0] < 0 || element.x + dir[k][0] >= lines || element.y + dir[k][1] < 0 || element.y + dir[k][1] >= columns){  
@@ -222,6 +231,8 @@ function scanGrid(base) {
         let a = arr[element.x+dir[k][0]][element.y+dir[k][1]].state == false && arr[element.x+dir[k][0]][element.y+dir[k][1]].number
         let a_x = element.x+dir[k][0]
         let a_y = element.y+dir[k][1]
+        arr[a_x][a_y].state = true
+        count++
         switch(a) {
           case 1: addColor(divArr[a_x][a_y], 'rgb(80, 228, 159)', '#aaa'); break
           case 2: addColor(divArr[a_x][a_y], 'rgb(230, 199, 112)', '#aaa'); break
