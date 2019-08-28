@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<br lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../index.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>js小练习</h1>
+    <nav>
+      <ul>
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="../number/game.html">猜数字小游戏</a></li>
+        <li><a href="../story/game.html">随机故事</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="input">
+        <label for="grids">请选择地图：</label>
+        <select name="" id="grids">
+          <option value="81">9*9</option>
+          <option value="225">15*15</option>
+          <option value="400">20*20</option>
+        </select></br>
+        <label for="number">请输入雷的个数：</label>
+        <input type="text" id="number" placeholder="9" value="9">
+        <button class="submit" value="submit">开始</button>
+        <button class="submit reset" value="reset">重置</button>
+      </div>
+      <div class="main"></div>
+    </main>
+  </div>
+  <script src="game.js"></script>
+</body>
