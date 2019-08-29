@@ -6,23 +6,6 @@
   padding-left: 0.5em; 
   width: 8em;
 }
-.submit {
-  width: 5em;
-  border: 2px solid rgb(99, 167, 194);
-  border-radius: 1em;
-  outline: none;
-  background-color: rgb(135, 166, 228);
-  color: #eee;
-  cursor: pointer;
-}
-.clicked {
-  animation: click 0.15s;
-}
-@keyframes click{
-  to {
-    transform: translate(1px ,2px);
-  }
-}
 .output {
   display: none;
   margin: 0 auto; 

@@ -1,16 +1,37 @@
 let main = document.querySelector('.main')
 let btn = document.querySelectorAll('.submit')
-
+let map = document.querySelector('#grids')
+let number = document.querySelector('#number')
+let mark = document.querySelector('.mark')
 let divArr = new Array()
 let grids = new Array()
 let arr = new Array()
 let divs = new Array()
+
+let flag = false
+let isOne = true
 
 let lines = 0
 let columns = 0
 let sweeps = 0
 let gridss = 0
 let count = 0 //记录点击数
+map.onchange = ()=> {
+  if (map.value == 81) {
+    number.value = 9
+    number.placeholder = 9
+    mark.style.height = mark.style.minHeight
+  } else if(map.value == 225) {
+    number.value = 50
+    number.placeholder = 50
+    mark.style.height = 30+15*25+14*2 + 'px'
+  } else {
+    number.value = 99
+    number.placeholder = 99
+    mark.style.height = 30+20*25+19*2 + 'px'
+  }
+}
+
 btn.forEach(element => {
   element.addEventListener('click', () => {
     click(element)
@@ -24,18 +45,26 @@ function click(element) {
       element.className = "reset submit clicked";
     },0)
     reset()
+    flag = false
+    btn[0].disabled = ''
   } else {
     element.className = "submit"
     setTimeout(() => {
       element.className = "submit clicked";
     },0)
-    start()
+    if(!flag){
+      flag = true
+      element.disabled = 'disabled'
+      start()
+    } else {
+      console.log(flag)
+    }
   }
 }
 function start() {
   gridss = document.querySelector('#grids').value
   sweeps = document.querySelector('#number').value
-  console.log(document.querySelector('#grids').value)
+  mark.style.display = 'none'
   createGrids(gridss,sweeps)
   shuffle()
   sliceArray(Math.sqrt(gridss))
@@ -45,23 +74,20 @@ function start() {
 
 function reset() {
   main.parentNode.removeChild(main);
+
   let mainTag = document.querySelector('main')
   div = document.createElement('div')
   div.className = 'main'
   mainTag.appendChild(div)
   main = document.querySelector('.main')
-  console.log(mainTag)
 
   divArr.splice(0, divArr.length)
   grids.splice(0, grids.length)
   arr.splice(0, arr.length)
+  count = 0
 
   gridss = document.querySelector('#grids').value
   sweeps = document.querySelector('#number').value
-  console.log(document.querySelector('#grids').value)
-  createGrids(gridss,sweeps)
-  shuffle()
-  sliceArray(Math.sqrt(gridss))
 }
 function createGrids(size , number) {
   for (let i = 0; i < size; i++)
@@ -123,14 +149,11 @@ function sliceArray(minColumns) {
         ele.y = inde
       })
     })
-    //console.log(arr)
   }
   fillNumber(arr, lines, columns)
-  //console.log(arr)
   for(let i = 0; i < lines; i++){
     for(let j = 0; j < columns; j++) {
       div = document.createElement('div')
-      //div.textContent = arr[i][j].number
       div.index = arr[i][j].id
       div.value = arr[i][j].number
       div.dirx = arr[i][j].x
@@ -145,7 +168,6 @@ function sliceArray(minColumns) {
 }
 
 function fillNumber(arr, lines, columns) {
-  //console.log(arr.length + '  '+ columns + '  ' + lines)
   let dir = [[-1,0],[-1,1],[0,1],[1,1],[1,0],[1,-1],[0,-1],[-1,-1]]
   for(let i = 0; i < lines; i++){
     for(let j = 0; j < columns; j++) {
@@ -153,7 +175,6 @@ function fillNumber(arr, lines, columns) {
         if(i + dir[k][0] < 0 || i+dir[k][0] >= lines || j + dir[k][1] < 0 || j + dir[k][1] >= columns){
           continue
         }
-        //console.log(lines + ' ' + columns + ' ' + (i+dir[k][0]) + ' ' + (j+dir[k][1]))
         if(arr[i+dir[k][0]][j+dir[k][1]].sweep == true && arr[i][j].number != 9) {
           arr[i][j].number += 1
         }
@@ -173,17 +194,20 @@ function getDivs() {
   }
 }
 function gameOver() {
-  console.log(divs)
   divs.forEach(element => {
-    console.log(element.value)
     if(element.value == 9){
       addColor(element, 'rgb(240, 78, 49)' , '#fbb', '😡')
     }
   });
+  setTimeout(() => {
+    mark.style.display = 'block'
+  }, 1000);
 }
 function changeState(element) {
-  arr[element.dirx][element.diry].state = true;
-  count++
+  if(arr[element.dirx][element.diry].state == false) {
+    arr[element.dirx][element.diry].state = true;
+    count++
+  }
 }
 function addClickEvent() {
   main.addEventListener('click', (e) => {
@@ -199,27 +223,32 @@ function addClickEvent() {
       case 8: changeState(e.target); addColor(e.target, 'rgb(255, 115, 48)', '#aaa'); break
       case 9: addColor(e.target, 'rgb(240, 78, 49)' , '#fbb', '😡'); gameOver(); break
     }
-    console.log(count)
+    if(count == gridss - sweeps) {
+      console.log('你获胜了')
+      mark.style.display = 'block'
+    }
   })
   main.addEventListener('contextmenu', (e) =>{
-    console.log('右击')
-    if (e.target.textContent == '🚩') {
-      addColor(e.target, '' , '', '')
-    } else {
-      addColor(e.target, '' , '', '🚩')
+    if(e.path.length == 9){
+      if (e.target.textContent == '🚩') {
+        addColor(e.target, '' , '', '')
+      } else {
+        addColor(e.target, '' , '', '🚩')
+      }
     }
     e.preventDefault()
   })
 }
 
 function scanGrid(base) {
-  console.log(arr)
   let dir = [[-1,0],[-1,1],[0,1],[1,1],[1,0],[1,-1],[0,-1],[-1,-1]]
   let scanArr = new Array()
+  arr[base.dirx][base.diry].state = true
+  count++
   scanArr.push(arr[base.dirx][base.diry])
   while (scanArr.length != 0){
     let element = scanArr.pop()
-    arr[element.x][element.y].state = true
+    //console.log(scanArr.length)
     divArr[element.x][element.y].style.backgroundColor = '#ccc'
     for(let k = 0; k < 8; k++) {
       if(element.x + dir[k][0] < 0 || element.x + dir[k][0] >= lines || element.y + dir[k][1] < 0 || element.y + dir[k][1] >= columns){  
@@ -227,6 +256,8 @@ function scanGrid(base) {
       }
       if(arr[element.x+dir[k][0]][element.y+dir[k][1]].state == false && arr[element.x+dir[k][0]][element.y+dir[k][1]].number == 0) {
         scanArr.push(arr[element.x+dir[k][0]][element.y+dir[k][1]])
+        arr[element.x+dir[k][0]][element.y+dir[k][1]].state = true
+        count++
       } else if (arr[element.x+dir[k][0]][element.y+dir[k][1]].state == false && arr[element.x+dir[k][0]][element.y+dir[k][1]].number != 9) {
         let a = arr[element.x+dir[k][0]][element.y+dir[k][1]].state == false && arr[element.x+dir[k][0]][element.y+dir[k][1]].number
         let a_x = element.x+dir[k][0]
@@ -247,3 +278,4 @@ function scanGrid(base) {
     }
   }
 }
+

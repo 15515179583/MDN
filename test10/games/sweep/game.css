@@ -1,6 +1,7 @@
+
 .main {
   margin: 0 auto;
-  margin-top: 5px;
+  padding-top: 30px;
   display: grid;
   grid-gap:2px;
 }
@@ -22,4 +23,20 @@
 }
 .submit:nth-of-type(2) {
   margin-left: 5px;
+}
+.pos {
+  position: relative;
+  
+}
+.mark {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  text-align: center;
+  width: 100%;
+  min-height: 376px;
+  padding-top: 50px;
+  background-color: #cce8f1;
+  border-radius: 50px 50px 0 0;
 }
