@@ -28,3 +28,8 @@
     - colgroup 一个colgroup标签含有多个col标签
     - col 用于定义列的样式
     - span 需要一个无单位的数字值，用来制定你想要让这个样式应用到表格中多少列
+- css
+  - border-collapse 边框合并
+    - separate（默认） 边框会被分开
+    - collapse 如果可能，边框会合并为一个单一的边框。
+    - inherit 规定应该从父元素继承 border-collapse 属性的值。
